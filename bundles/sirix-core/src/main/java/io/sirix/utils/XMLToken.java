@@ -1,6 +1,8 @@
 package io.sirix.utils;
 
 import io.brackit.query.atomic.QNm;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import javax.xml.namespace.QName;
 import java.net.MalformedURLException;
@@ -178,7 +180,7 @@ public final class XMLToken {
   public static boolean isUrl(final String namespaceURI) {
     // NamespaceURI is never null.
     try {
-      new URL(namespaceURI).toURI();
+      Urls.create(namespaceURI, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS).toURI();
     } catch (final MalformedURLException | URISyntaxException e) {
       return false;
     }
