@@ -23,6 +23,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.SecureRandom;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Optional;
@@ -508,7 +509,7 @@ public final class QueryUsage {
   private static Path generateSampleDoc(final String prefix) throws IOException {
     final Path file = Files.createTempFile(prefix, ".xml");
     final PrintStream out = new PrintStream(new FileOutputStream(file.toFile()));
-    final Random rnd = new Random();
+    final Random rnd = new SecureRandom();
     final long now = System.currentTimeMillis();
     final int diff = rnd.nextInt(6000 * 60 * 24 * 7);
     new Date(now - diff);

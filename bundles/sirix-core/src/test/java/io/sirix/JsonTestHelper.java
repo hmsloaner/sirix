@@ -31,6 +31,7 @@ import io.sirix.api.json.JsonResourceSession;
 import io.sirix.exception.SirixException;
 import io.sirix.exception.SirixRuntimeException;
 import io.sirix.utils.JsonDocumentCreator;
+import java.security.SecureRandom;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -88,7 +89,7 @@ public final class JsonTestHelper {
   /**
    * Common random instance for generating common tag names.
    */
-  public final static Random random = new Random();
+  public final static Random random = new SecureRandom();
 
   /**
    * Path <=> Database instances.

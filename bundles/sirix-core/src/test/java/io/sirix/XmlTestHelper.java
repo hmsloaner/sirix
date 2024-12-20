@@ -21,6 +21,7 @@
 
 package io.sirix;
 
+import java.security.SecureRandom;
 import static org.junit.Assert.fail;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -100,7 +101,7 @@ public final class XmlTestHelper {
   }
 
   /** Common random instance for generating common tag names. */
-  public final static Random random = new Random();
+  public final static Random random = new SecureRandom();
 
   /** Path <=> Database instances. */
   private final static Map<Path, Database<XmlResourceSession>> INSTANCES = new Hashtable<>();

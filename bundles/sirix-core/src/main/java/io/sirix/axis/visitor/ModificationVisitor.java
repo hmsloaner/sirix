@@ -13,6 +13,7 @@ import io.sirix.exception.SirixException;
 import io.sirix.node.immutable.xml.ImmutableElement;
 import io.sirix.node.immutable.xml.ImmutableText;
 import io.sirix.service.xml.shredder.XmlShredder;
+import java.security.SecureRandom;
 import org.slf4j.LoggerFactory;
 
 import java.util.Random;
@@ -39,7 +40,7 @@ public final class ModificationVisitor extends AbstractXmlNodeVisitor {
   private final XmlNodeTrx wtx;
 
   /** Random number generator. */
-  private final Random random = new Random();
+  private final Random random = new SecureRandom();
 
   /** Start key. */
   private final long startKey;
