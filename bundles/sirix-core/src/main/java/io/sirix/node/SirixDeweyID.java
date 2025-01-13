@@ -995,7 +995,9 @@ public final class SirixDeweyID implements Comparable<SirixDeweyID>, SimpleDewey
         divisionValues[i] = deweyID2.divisionValues[i] / 2;
         // make sure last division is odd
         if (divisionValues[i] % 2 == 0)
-          divisionValues[i]++;
+          {
+              divisionValues[i]++;
+          }
       }
 
       return new SirixDeweyID(Arrays.copyOf(divisionValues, divisions), deweyID2.level);
